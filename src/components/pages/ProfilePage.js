@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, SafeAreaView } from "react-native";
+import { View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import { Button, Avatar, Title, Caption, Text, TouchableRipple } from "react-native-paper";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
@@ -32,6 +32,7 @@ const ProfilePage = () => {
   
     return (
       <SafeAreaView style={styles.container}>
+        <ScrollView>
         <View style={styles.userInfoSection}>
           <View style={{flexDirection: 'row', marginTop: 15}}>
             <Avatar.Image 
@@ -109,7 +110,14 @@ const ProfilePage = () => {
               <Text style={styles.profileItemText}>Settings</Text>
             </View>
           </TouchableRipple>
+          <TouchableRipple onPress={() => {navigation.navigate('Landing')}}>
+            <View style={styles.profileItem}>
+              <Icon name="logout" color="#365486" size={25}/>
+              <Text style={styles.profileItemText}>Log Out</Text>
+            </View>
+          </TouchableRipple>
         </View>
+        </ScrollView>
       </SafeAreaView>
     );
   };
