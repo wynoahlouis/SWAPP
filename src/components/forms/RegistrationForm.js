@@ -33,7 +33,7 @@ export default function LoginForm({ navigation }) {
         return false;
       }
 
-      const url = 'http://192.168.1.3:8000/api/v1/register';
+      const url = 'http://192.168.1.5:8000/api/v1/register';
 
       const data = {
         name,

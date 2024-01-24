@@ -9,6 +9,7 @@ import {
 import colors from "./src/config/colors";
 import NavigationStack from "./src/components/navigation/NavigationStack"
 import { UserProvider } from "./src/components//pages/UserContext";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   const theme = {
@@ -22,7 +23,9 @@ export default function App() {
       <UserProvider>
         <SafeAreaView style={styles.container}>
           <StatusBar style="auto" />
-          <NavigationStack />
+          <NavigationContainer>
+            <NavigationStack />
+          </NavigationContainer>
         </SafeAreaView>
       </UserProvider>
     </PaperProvider>
